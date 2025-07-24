@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive; /* Fonte opcional para um estilo retrô */
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Para que o canvas fique atrás dos menus */
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    z-index: 10; /* Garante que os menus fiquem acima do canvas */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Sombra neon */
+    border: 2px solid #ff0000; /* Borda neon */
+}
+
+.menu h1 {
+    color: #ff0000; /* Cor neon rosa/roxo */
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 0 0 10px #ff0000; /* Sombra de texto neon */
+}
+
+.menu h2 {
+    color: #eb2424; /* Cor neon verde */
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.menu p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #cccccc;
+}
+
+.menu button {
+    background-color: #ff0000; /* Botão neon ciano */
+    color: #1a1a1a; /* Texto escuro para contraste */
+    border: none;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu button:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px); /* Pequeno movimento para cima */
+}
+
+.menu button:active {
+    background-color: #cc0000;
+    transform: translateY(0); /* Retorna à posição original ao clicar */
+}
+
+/* Classe para esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilo para a pontuação em jogo */
+#score-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-family: 'Press Start 2P', cursive; /* Mesma fonte do menu */
+    font-size: 24px;
+    z-index: 5; /* Fica acima do canvas, mas abaixo dos menus */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo específico para a tela de carregamento */
+#loading-screen {
+    background-color: rgba(0, 0, 0, 0.95); /* Um pouco mais escuro */
+    z-index: 20; /* Garante que fique no topo */
+}
+#loading-screen p {
+    font-size: 1.5em;
+    color: #fff;
+    margin-top: 20px;
+}
